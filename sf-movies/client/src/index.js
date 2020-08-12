@@ -1,11 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-
-const App = () => {
-  return(
-    <h1>Hello World</h1>
-  )
-}
+import App from './App'
+// require('dotenv').config()
 
 const root = document.getElementById('root');
 

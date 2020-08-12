@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-
+const Dotenv = require('dotenv-webpack')
 module.exports = {
 	// The point or points where to start the application bundling process
 	entry: './src/index.js',
@@ -36,6 +36,9 @@ module.exports = {
 		new HtmlWebPackPlugin({
 			template: './public/index.html',
 			filename: 'index.html'
+		}),
+		new Dotenv({
+			path: './.env'
 		})
 	]
 };
