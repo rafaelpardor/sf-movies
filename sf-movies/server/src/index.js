@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.use('/api/logs', logs)
+app.use('/api/logs/movies', logs);
 
 // 404 Erorr handler
 app.use(middleware.notFound)
