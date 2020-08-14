@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
 	// The point or points where to start the application bundling process
 	entry: './src/index.js',
@@ -29,13 +31,25 @@ module.exports = {
 						loader: 'html-loader'
 					}
 				]
-			}
+			},
+			{
+				test: /\.(s*)css$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+					},
+					'css-loader'
+				]
+			}, 
 		]
 	},
 	plugins: [
 		new HtmlWebPackPlugin({
 			template: './public/index.html',
 			filename: 'index.html'
+		}),
+		new MiniCssExtractPlugin({
+			filename: 'assets/[name].css' 
 		}),
 		new Dotenv({
 			path: './.env'
