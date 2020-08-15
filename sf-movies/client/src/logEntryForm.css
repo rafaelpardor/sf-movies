@@ -1,0 +1,13 @@
+.entry-form label,
+.entry-form input,
+.entry-form textarea,
+.entry-form button {
+	display: block;
+	font-size: 1rem;
+	margin: 0.5rem 0;
+	width: 100%;
+}
+
+.error {
+	color: #F3B73E;
+}
