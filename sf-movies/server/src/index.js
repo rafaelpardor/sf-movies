@@ -10,7 +10,8 @@ const logs = require('./api/logs');
 
 const app = express();
 const db = mongoose.connection;
-mongoose.connect(process.env.MONGO_URL_DEV, {
+
+mongoose.connect(process.env.MONGO_URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 });
