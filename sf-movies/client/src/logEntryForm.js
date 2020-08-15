@@ -26,7 +26,7 @@ const LogEntryForm = ({ location, onClose }) => {
 
 	return(
 		<form onSubmit={handleSubmit(onSubmit)} className="entry-form">
-			{ error ? <h3 className="error">{error}</h3> : null }
+			{ error ? <h3 className="error">{ error }</h3> : null }
 			<label htmlFor="apiKey">Insert Api Key</label>
       <input type="password" name="apiKey" required ref={register} />
 			<label htmlFor="title">Titulo</label>
@@ -47,8 +47,7 @@ const LogEntryForm = ({ location, onClose }) => {
 
 			<label htmlFor="mainActor">Actor Principal</label>
 			<input name="mainActor" ref={register}/>
-			<button disabled={loading}>{ loading ? 'loading...' : 'Crear'}</button>
-
+			<button disabled={ loading }>{ loading ? 'Loading...' : 'Crear'}</button>
 		</form>
 	);
 };
