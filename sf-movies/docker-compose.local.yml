@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  server:
+    restart: always   
+    image: rafaelpardor/sfmovies-server:1.0
+    ports:
+      - "1337:1337"
+    env_file: ./server/.env
+    depends_on:
+      - mongo
+
+  client:
+    restart: always
+    image: rafaelpardor/sfmovies-client:1.0
+    ports:
+      - "3000:3000"
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongo
